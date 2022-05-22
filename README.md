@@ -50,32 +50,32 @@ docker pull cassandra:latest <br>
 docker run -d --name cassandra-docker -p 9042:9042 cassandra<br>
 
 #### Open CQLSH to view and execute queries:
-Open cqlsh and create keyspace db
-Command:
-docker exec -i -t cassandra-docker cqlsh
-CREATE KEYSPACE db WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 1};
-Screenshot:	
-#### Install python dependencies:
-Commands:
-pip install Django==2.2.1
-pip install vaderSentiment
-pip install word-forms
-pip install nltk
-#### Sync and prepopulate the database using python django shell:
-Create tables based on models.py using command:
-python manage.py migrate --run-syncdb
+Open cqlsh and create keyspace db<br />
+Command:<br />
+docker exec -i -t cassandra-docker cqlsh<br />
+CREATE KEYSPACE db WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 1};<br />
+
+#### Install python dependencies:<br />
+Commands:<br />
+pip install Django==2.2.1<br />
+pip install vaderSentiment<br />
+pip install word-forms<br />
+pip install nltk<br />
+#### Sync and prepopulate the database using python django shell:<br />
+Create tables based on models.py using command:<br />
+python manage.py migrate --run-syncdb<br />
 
 #### Sync cassandra tables:
-python manage.py sync_cassandra
+python manage.py sync_cassandra<br />
 
 #### Open shell and run the database population scripts: 
-To create users for student, coordinator and professor we have created a script called as db_gen.py when you import this script using shell all the commands related to creating users will be executed. We have one more script called as db_populate.py, this script will generate all the entries for feedback form, questions, tags and also will populate feedback responses randomly for the created students.
-Commands:
-python manage.py shell
-import db_gen
-import db_populate
+To create users for student, coordinator and professor we have created a script called as db_gen.py when you import this script using shell all the commands related to creating users will be executed. We have one more script called as db_populate.py, this script will generate all the entries for feedback form, questions, tags and also will populate feedback responses randomly for the created students.<br />
+Commands:<br />
+python manage.py shell<br />
+import db_gen<br />
+import db_populate<br />
 
 #### Run the django server:
-To run the server:
-python manage.py runserver
+To run the server:<br />
+python manage.py runserver<br />
 
