@@ -17,37 +17,37 @@ Stakeholders involved in this project are students, professors and coordinators 
 ## Functional Requirements:
 ### Users
 #### Student
-Login to available feedback forms using their username/password
-Fill in feedback forms for faculties once they logged in
+Login to available feedback forms using their username/password <br>
+Fill in feedback forms for faculties once they logged in <br>
 #### Coordinator
-Login to see coordinator dashboard
-Create and publish feedback forms
-They can access all feedback results
+Login to see coordinator dashboard<br>
+Create and publish feedback forms<br>
+They can access all feedback results<br>
 #### Professor
-Login to see professor dashboard
-Analysis of received feedback
-Overall feedback received
-Ability to see past feedbacks
+Login to see professor dashboard<br>
+Analysis of received feedback<br>
+Overall feedback received<br>
+Ability to see past feedbacks<br>
 
 ## Features
-Web-based application: Creating a Django (Python) based web application. Changes will be made and applied centrally (no executable file). All users will use one version of the application. Users will be able to access this application from any browser (computer, phone, tablet, etc).
-Analytical dashboard for professors: Visualizing data (feedback) for better understanding.
-Apache Cassandra: To filter and query feedback received from students using CQL (Cassandra Query Language) to create analytics and reports for the professor dashboard. 
+Web-based application: Creating a Django (Python) based web application. Changes will be made and applied centrally (no executable file). All users will use one version of the application. Users will be able to access this application from any browser (computer, phone, tablet, etc).<br>
+Analytical dashboard for professors: Visualizing data (feedback) for better understanding.<br>
+Apache Cassandra: To filter and query feedback received from students using CQL (Cassandra Query Language) to create analytics and reports for the professor dashboard.<br> 
 
 ## Functions
 
-Anonymous feedback from students: Faculty can only see comments, compliments and reviews from students. The students' identities will be hidden from professor’s.
-Control over questions: Coordinator can add/remove questions upon requests from professors. 
-Overall improvement graph: Feedbacks can be conducted multiple times over a semester. Professors can see them.
+Anonymous feedback from students: Faculty can only see comments, compliments and reviews from students. The students' identities will be hidden from professor’s.<br>
+Control over questions: Coordinator can add/remove questions upon requests from professors. <br>
+Overall improvement graph: Feedbacks can be conducted multiple times over a semester. Professors can see them.<br>
 
 ## Steps to execute:
-#### Install docker
-We need to run a separate container of cassandra in docker as cassandra requires python2 but our project is in python3. Running cassandra in docker gives us the flexibility to focus our dependencies of the project.
+#### Install docker<br>
+We need to run a separate container of cassandra in docker as cassandra requires python2 but our project is in python3. Running cassandra in docker gives us the flexibility to focus our dependencies of the project.<br>
 
-Pull latest Cassandra image and run it in the background: 
-Commands:
-docker pull cassandra:latest 
-docker run -d --name cassandra-docker -p 9042:9042 cassandra
+Pull latest Cassandra image and run it in the background: <br>
+Commands:<br>
+docker pull cassandra:latest <br>
+docker run -d --name cassandra-docker -p 9042:9042 cassandra<br>
 
 #### Open CQLSH to view and execute queries:
 Open cqlsh and create keyspace db
